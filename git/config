@@ -1,0 +1,40 @@
+[user]
+	name = Petter Elgheim
+	email = petter@skaidigital.com
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+
+[pull]
+	rebase = false
+
+[fetch]
+	prune = true
+
+[color]
+	ui = auto
+
+[core]
+	preloadIndex = true
+	fscache = true
+	excludesFile = ~/.config/git/ignore
+
+[gc]
+	auto = 256
+
+[index]
+	threads = 4
+	version = 4
+
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ga = add .
+	undo = reset --soft HEAD~1
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	cleanup = !git branch -vv | grep \": gone]\" | awk \"{print \\$1}\" | xargs -n 1 git branch -D

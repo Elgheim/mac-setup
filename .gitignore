@@ -1,0 +1,6 @@
+# Never commit actual secrets
+.secrets
+secrets/.secrets
+
+# OS
+.DS_Store

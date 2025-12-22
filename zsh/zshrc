@@ -1,0 +1,94 @@
+# Prevent duplicate PATH entries
+typeset -U PATH
+
+# History configuration
+HISTSIZE=50000
+SAVEHIST=50000
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY
+
+# Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
+
+# Starship prompt
+eval "$(starship init zsh)"
+
+# Editor
+export EDITOR="cursor -w"
+export VISUAL="$EDITOR"
+
+# Completion caching
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Secrets (not committed to git)
+[[ -f ~/.secrets ]] && source ~/.secrets
+
+# Aliases - modern replacements
+alias ls="eza --icons"
+alias ll="eza -la --icons --git"
+alias cat="bat --paging=never"
+alias cd="z"
+alias ..="cd .."
+
+# Aliases - directories
+alias skai="cd ~/skai"
+
+# Aliases - utility
+alias ip="curl ifconfig.me"
+alias reload="source ~/.zshrc"
+
+# Aliases - shortcuts
+alias p="pnpm"
+alias b="bun"
+alias v="nvim"
+alias oc="opencode"
+alias ask="opencode --headless --prompt"
+alias cld="claude"
+
+# Aliases - git
+alias ghco="gh pr checkout"
+alias git-unlock='rm -f .git/index.lock .git/HEAD.lock .git/config.lock && echo "Lock files removed"'
+alias git-deep-clean='rm -f .git/packed-refs && git pack-refs --all && git gc --prune=now --aggressive && git fetch --prune --force origin && echo "Repository cleaned"'
+
+# Aliases - dotfiles
+alias brewsave="brew bundle dump --force --file=~/.dotfiles/Brewfile && echo 'Brewfile updated'"
+
+# fnm (fast node manager)
+eval "$(fnm env --use-on-cd)"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# go
+export PATH="$HOME/go/bin:$PATH"
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# Local bin
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+
+# Zoxide (must be after PATH setup)
+eval "$(zoxide init zsh)"
+
+# Autosuggestions keybinding
+bindkey '^I' autosuggest-accept
+
+# Completions
+autoload -Uz compinit && compinit -i

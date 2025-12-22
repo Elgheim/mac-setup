@@ -1,0 +1,35 @@
+# Ghostty config
+# https://ghostty.org/docs/config
+
+# macOS
+macos-option-as-alt = right
+macos-titlebar-style = tabs
+
+# Keybindings - splits
+keybind = cmd+k=goto_split:next
+keybind = cmd+j=goto_split:previous
+keybind = cmd+d=new_split:right
+keybind = cmd+shift+d=new_split:down
+keybind = cmd+w=close_surface
+
+# Splits appearance
+unfocused-split-opacity = 0.4
+
+# Font
+font-family = "JetBrains Mono"
+font-size = 13
+adjust-cell-height = 20%
+
+# Window
+window-padding-x = 10
+window-padding-y = 10
+
+# Cursor
+cursor-style = bar
+cursor-style-blink = false
+
+# Scrollback
+scrollback-limit = 10000
+
+# Theme
+theme = GitHub-Dark-Dimmed

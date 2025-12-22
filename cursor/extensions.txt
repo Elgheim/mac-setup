@@ -1,0 +1,57 @@
+# Cursor Extensions
+# Install with: cat extensions.txt | xargs -L 1 cursor --install-extension
+
+# Theme
+akamud.vscode-theme-onedark
+
+# Editor
+vscodevim.vim
+vscode-icons-team.vscode-icons
+
+# Formatting & Linting
+biomejs.biome
+dbaeumer.vscode-eslint
+esbenp.prettier-vscode
+oxc.oxc-vscode
+
+# TypeScript/JavaScript
+yoavbls.pretty-ts-errors
+dsznajder.es7-react-js-snippets
+wix.vscode-import-cost
+
+# Tailwind
+bradlc.vscode-tailwindcss
+
+# GraphQL
+graphql.vscode-graphql
+graphql.vscode-graphql-syntax
+
+# Git
+github.vscode-pull-request-github
+github.vscode-github-actions
+vivaxy.vscode-conventional-commits
+
+# Utilities
+christian-kohler.path-intellisense
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+patbenatar.advanced-new-file
+sleistner.vscode-fileutils
+wallabyjs.console-ninja
+mechatroner.rainbow-csv
+
+# AI
+anthropic.claude-code
+
+# Prisma
+prisma.prisma
+
+# Sanity
+sanity-io.vscode-sanity
+
+# Shopify
+shopify.theme-check-vscode
+shopify.polaris-for-vscode
+
+# Comments
+aaron-bond.better-comments
