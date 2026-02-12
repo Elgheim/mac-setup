@@ -251,5 +251,10 @@
     "**/.git/subtree-cache/**": true,
     "**/node_modules/**": true,
     "**/.hg/store/**": true
+  },
+  "git.autofetch": true,
+  "console-ninja.featureSet": "Community",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

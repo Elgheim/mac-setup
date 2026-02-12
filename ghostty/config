@@ -2,7 +2,7 @@
 # https://ghostty.org/docs/config
 
 # macOS
-macos-option-as-alt = right
+macos-option-as-alt = true
 macos-titlebar-style = tabs
 
 # Keybindings - splits
@@ -32,4 +32,4 @@ cursor-style-blink = false
 scrollback-limit = 10000
 
 # Theme
-theme = GitHub-Dark-Dimmed
+theme = Vercel
